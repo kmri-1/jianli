@@ -16,4 +16,4 @@ node_modules
 .DS_Store
 
 # 体积很大的原始视频（站点只用优化后的 .mp4；勿把 .mov 提交到 Git）
-public/videos/*.mov
+public/videos/*.movpublic/videos/
