@@ -30,7 +30,7 @@ const works: Work[] = [
     description: "动效+多个不同版本",
     media: [
       { type: "image", src: "/images/work-1-new.png", alt: "生产管理中心大屏-首页" },
-      { type: "video", src: "/videos/production-center-1.mp4", alt: "生产管理中心大屏-动效视频" },
+      { type: "video", src: "https://tc2aaq9ubv9eza6p.public.blob.vercel-storage.com/production-center-1.mp4", alt: "生产管理中心大屏-动效视频" },
       { type: "image", src: "/images/production-center-menu-3.0.png", alt: "生产管理中心大屏-首页菜单3.0" },
       { type: "image", src: "/images/production-center-fix-rate.png", alt: "生产管理中心大屏-首页故障修复率优化" },
       { type: "image", src: "/images/production-center-abnormal-event.png", alt: "生产管理中心大屏-发车保障异常事件" },
@@ -45,9 +45,9 @@ const works: Work[] = [
     description: '上海市第二届"数建杯"数字城市建设大赛特等奖项目',
     media: [
       { type: "image", src: "/images/work-zhihui-schedule.png", alt: "智慧调度大屏-运力运量匹配分析" },
-      { type: "video", src: "/videos/schedule-network-monitor.mp4", alt: "智慧调度大屏-路网监视视频" },
-      { type: "video", src: "/videos/schedule-key-control.mp4", alt: "智慧调度大屏-运营重点管控视频" },
-      { type: "video", src: "/videos/schedule-10.0.0.mp4", alt: "智慧调度大屏-10.0.0动效视频" },
+      { type: "video", src: "https://tc2aaq9ubv9eza6p.public.blob.vercel-storage.com/schedule-10.0.0.mp4", alt: "智慧调度大屏-路网监视视频" },
+      { type: "video", src: "https://tc2aaq9ubv9eza6p.public.blob.vercel-storage.com/schedule-key-control.mp4", alt: "智慧调度大屏-运营重点管控视频" },
+      { type: "video", src: "https://tc2aaq9ubv9eza6p.public.blob.vercel-storage.com/schedule-network-monitor.mp4", alt: "智慧调度大屏-10.0.0动效视频" },
       { type: "image", src: "/images/schedule-network-warning.png", alt: "智慧调度大屏-3x3路网大客流预警" },
       { type: "image", src: "/images/schedule-network-monitor-11.0.png", alt: "智慧调度大屏-11.0线网监视+客流信息+事件处理2条ATS" },
       { type: "image", src: "/images/schedule-warning-11.2.6.png", alt: "智慧调度大屏-11.2.6大客流预警+运力运量+方案比选+应急抢修" },
@@ -74,7 +74,7 @@ const works: Work[] = [
     description: "组件库高效完成，日间模式+夜间模式一键切换",
     media: [
       { type: "image", src: "/images/work-subway-security-admin.png", alt: "地铁安检项目-首页" },
-      { type: "video", src: "/videos/security-switch.mp4", alt: "地铁安检项目-一键切换视频" },
+      { type: "video", src: "https://tc2aaq9ubv9eza6p.public.blob.vercel-storage.com/security-switch.mp4", alt: "地铁安检项目-一键切换视频" },
       { type: "image", src: "/images/security-network-light-1.2.png", alt: "地铁安检项目-线网可视化浅色1.2" },
       { type: "image", src: "/images/security-network-light-1.0.png", alt: "地铁安检项目-线网可视化浅色1.0" },
       { type: "image", src: "/images/security-home-simple.png", alt: "地铁安检项目-首页简化版" },
@@ -92,6 +92,7 @@ const works: Work[] = [
     description: "复杂网站作品示例",
     media: [
       { type: "image", src: "/images/work-bigdata-web-dashboard.png", alt: "大数据中心看板-封面" },
+      { type: "video", src: "https://tc2aaq9ubv9eza6p.public.blob.vercel-storage.com/schedule-key-control.mp4", alt: "大数据中心看板-科技动效" },
       { type: "image", src: "/images/bigdata-market-indicator.png", alt: "大数据中心看板-集团市场经营指标看板" },
       { type: "image", src: "/images/bigdata-operation-cost.jpg", alt: "大数据中心看板-集团运营成本收支看板" },
       { type: "image", src: "/images/bigdata-power-strategy-dark.jpg", alt: "大数据中心看板-供电分公司战略指标深蓝" },
