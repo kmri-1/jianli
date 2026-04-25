@@ -13,7 +13,9 @@ next.user-config.*
 # Common ignores
 node_modules
 .next/
+out/
+out 2/
 .DS_Store
 
 # 体积很大的原始视频（站点只用优化后的 .mp4；勿把 .mov 提交到 Git）
-public/videos/*.movpublic/videos/
+public/videos/*.mov
