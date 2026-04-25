@@ -4,68 +4,8 @@ import { useEffect, useMemo, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react"
-
-type WorkMedia = {
-  type: "image" | "video"
-  src: string
-  alt?: string
-}
-
-type FeaturedWork = {
-  id: number
-  title: string
-  category: string
-  image: string
-  description: string
-  media?: WorkMedia[]
-}
-
-const featuredWorks: FeaturedWork[] = [
-  {
-    id: 1,
-    title: "上海地铁生产管理中心大屏",
-    category: "数据大屏",
-    image: "/images/work-1-new.png",
-    description: "动效+多个不同版本",
-    media: [
-      { type: "image", src: "/images/work-1-new.png", alt: "生产管理中心大屏-首页" },
-      { type: "video", src: "/videos/production-center-1.mp4", alt: "生产管理中心大屏-动效视频" },
-      { type: "image", src: "/images/production-center-menu-3.0.png", alt: "生产管理中心大屏-首页菜单3.0" },
-      { type: "image", src: "/images/production-center-fix-rate.png", alt: "生产管理中心大屏-首页故障修复率优化" },
-      { type: "image", src: "/images/production-center-abnormal-event.png", alt: "生产管理中心大屏-发车保障异常事件" },
-      { type: "image", src: "/images/production-center-construction-backup.png", alt: "生产管理中心大屏-港城车场春节专项施工备份" },
-    ],
-  },
-  {
-    id: 2,
-    title: "智慧调度大屏",
-    category: "数据大屏",
-    image: "/images/work-zhihui-schedule.png",
-    description: '上海市第二届"数建杯"数字城市建设大赛特等奖项目',
-    media: [
-      { type: "image", src: "/images/work-zhihui-schedule.png", alt: "智慧调度大屏-运力运量匹配分析" },
-      { type: "video", src: "/videos/schedule-network-monitor.mp4", alt: "智慧调度大屏-路网监视视频" },
-      { type: "video", src: "/videos/schedule-key-control.mp4", alt: "智慧调度大屏-运营重点管控视频" },
-      { type: "video", src: "/videos/schedule-10.0.0.mp4", alt: "智慧调度大屏-10.0.0动效视频" },
-      { type: "image", src: "/images/schedule-network-warning.png", alt: "智慧调度大屏-3x3路网大客流预警" },
-      { type: "image", src: "/images/schedule-network-monitor-11.0.png", alt: "智慧调度大屏-11.0线网监视+客流信息+事件处理2条ATS" },
-      { type: "image", src: "/images/schedule-warning-11.2.6.png", alt: "智慧调度大屏-11.2.6大客流预警+运力运量+方案比选+应急抢修" },
-    ],
-  },
-  {
-    id: 3,
-    title: "工务数字化运维管理中心大屏",
-    category: "数据大屏",
-    image: "/images/work-gongwu-screen.png",
-    description: "用大屏展示施工情况的日常状态模式和施工状态模式",
-    media: [
-      { type: "image", src: "/images/work-gongwu-screen.png", alt: "工务数字化运维管理中心大屏-首页" },
-      { type: "image", src: "/images/gongwu-daily-1.png", alt: "工务数字化运维管理中心大屏-日常生产大屏" },
-      { type: "image", src: "/images/gongwu-daily-2.0.png", alt: "工务数字化运维管理中心大屏-日常生产大屏2.0" },
-      { type: "image", src: "/images/gongwu-construction-status.png", alt: "工务数字化运维管理中心大屏-施工情况" },
-    ],
-  },
-]
+import { getFeaturedWorks } from "@/lib/portfolio-data"
+const featuredWorks = getFeaturedWorks()
 
 export function FeaturedWorksSection() {
   const [viewerState, setViewerState] = useState<{ workId: number; mediaIndex: number } | null>(null)
@@ -215,7 +155,10 @@ export function FeaturedWorksSection() {
                     src={work.image}
                     alt={work.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    quality={85}
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   />
                   {work.id === 1 && (
                     <span className="absolute top-3 right-3 z-10 inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold text-white bg-gradient-to-r from-[#d946ef] via-[#ec4899] to-[#8b5cf6] shadow-lg shadow-[#d946ef]/30 border border-white/20 backdrop-blur-sm">
@@ -275,7 +218,7 @@ export function FeaturedWorksSection() {
                   controls
                   autoPlay
                   playsInline
-                  preload="metadata"
+                  preload="none"
                   className="h-full w-full object-contain bg-black"
                 />
               ) : (
@@ -284,9 +227,10 @@ export function FeaturedWorksSection() {
                   alt={activeMedia.alt ?? activeWork.title}
                   fill
                   draggable={false}
+                  sizes="100vw"
+                  quality={90}
                   className="object-contain bg-black select-none pointer-events-none"
                   style={{ transform: `translate(${offset.x}px, ${offset.y}px) scale(${zoom})` }}
-                  priority
                 />
               )}
             </div>

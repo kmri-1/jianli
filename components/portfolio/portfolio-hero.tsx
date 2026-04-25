@@ -11,7 +11,7 @@ export function PortfolioHero() {
           作品集
         </h1>
         <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
-          仅展示近3年0-1独立完成的部分设计项目。每个项目都代表了我对用户体验的理解和对设计细节的追求。
+          仅展示近期0-1独立完成的部分设计项目。每个项目都代表了我对用户体验的理解和对设计细节的追求。
         </p>
       </div>
     </section>
